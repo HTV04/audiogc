@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+	<name>AudiOGC Audio Demo</name>
+	<version>1.0.0</version>
+	<coder>HTV04</coder>
+	<short_description>Test out AudiOGC!</short_description>
+	<long_description>==Audio Credits==
+
+flac_file.flac:
+"Samba Isobel" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+mp3_file.mp3:
+"Bleeping Demo" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+vorbis_file.ogg:
+"Cipher" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+wav_file.wav:
+"Local Forecast" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/</long_description>
+</app>
