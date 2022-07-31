@@ -1,0 +1,12 @@
+# Build
+/build/*
+/bin/*
+/dist/*
+
+# Demo build
+/demo/build/*
+/demo/bin/*
+
+# Visual Studio Code
+/.vscode/*
+!/.vscode/c_cpp_properties.json
