@@ -12,7 +12,7 @@ endif
 
 # Check LIBOGC_VER
 ifeq ($(strip $(LIBOGC_VER)),)
-export LIBOGC_VER	:=	libogc-mod
+LIBOGC_VER	:=	libogc-mod
 else ifneq ($(LIBOGC_VER),libogc)
 ifneq ($(LIBOGC_VER),libogc2)
 ifneq ($(LIBOGC_VER),libogc-mod)
@@ -135,31 +135,30 @@ export LIBPATHS	:= -L$(LIBOGC_LIB) $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 #---------------------------------------------------------------------------------
 # set up portlibs directory
 #---------------------------------------------------------------------------------
-export PORTLIBS_DIR	:=	$(DESTDIR)
 ifeq ($(PLATFORM),gamecube)
 ifeq ($(LIBOGC_VER),libogc)
-PORTLIBS_DIR	+=	$(PORTLIBS_PATH)/gamecube
+PORTLIBS_DIR	=	$(DESTDIR)$(PORTLIBS_PATH)/gamecube
 else
-PORTLIBS_DIR	+=	$(DEVKITPRO)/$(LIBOGC_VER)/portlibs/gamecube
+PORTLIBS_DIR	=	$(DESTDIR)$(DEVKITPRO)/$(LIBOGC_VER)/portlibs/gamecube
 endif
 else
 ifeq ($(LIBOGC_VER),libogc)
-PORTLIBS_DIR	+=	$(PORTLIBS_PATH)/wii
+PORTLIBS_DIR	=	$(DESTDIR)$(PORTLIBS_PATH)/wii
 else
-PORTLIBS_DIR	+=	$(DEVKITPRO)/$(LIBOGC_VER)/portlibs/wii
+PORTLIBS_DIR	=	$(DESTDIR)$(DEVKITPRO)/$(LIBOGC_VER)/portlibs/wii
 endif
 endif
 
 #---------------------------------------------------------------------------------
 $(BUILD):
-	@[ -d $@ ] || mkdir -p $@
-	@[ -d $(CURDIR)/bin ] || mkdir -p $(CURDIR)/bin
+	@[[ -d $@ ]] || mkdir -p $@
+	@[[ -d $(CURDIR)/bin ]] || mkdir -p $(CURDIR)/bin
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 #---------------------------------------------------------------------------------
 install: $(BUILD)
-	@[ -d $(PORTLIBS_DIR)/include ] || mkdir -p $(PORTLIBS_DIR)/include
-	@[ -d $(PORTLIBS_DIR)/lib ] || mkdir -p $(PORTLIBS_DIR)/lib
+	@[[ -d $(PORTLIBS_DIR)/include ]] || mkdir -p $(PORTLIBS_DIR)/include
+	@[[ -d $(PORTLIBS_DIR)/lib ]] || mkdir -p $(PORTLIBS_DIR)/lib
 
 	cp -f $(CURDIR)/include/audiogc.hpp $(PORTLIBS_DIR)/include/audiogc.hpp
 
