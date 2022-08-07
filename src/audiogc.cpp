@@ -714,8 +714,7 @@ player::~player() {
 			return;
 	}
 
-	object_data->instances--;
-	if (object_data->instances == 0) {
+	if (--object_data->instances == 0) {
 		if ((object_data->in_memory == false) && (object_data->file_mode == mode::store)) {
 			std::free(object_data->audio_data);
 
